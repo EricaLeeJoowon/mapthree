@@ -1,0 +1,26 @@
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field {
+  width: 300px; /* 필요에 따라 너비 조정 */
+  padding: 10px; /* 보기 좋게 패딩 추가 */
+  font-size: 16px; /* 글자 크기 증가 */
+  margin-right: 10px; /* 입력 칸과 버튼 사이 간격 추가 */
+}
+
+.search-button {
+  padding: 10px 20px; /* 버튼 크기를 키우기 위해 패딩 증가 */
+  font-size: 16px; /* 글자 크기 증가 */
+  background-color: #7e96b0; /* 배경 색상 설정 */
+  color: white; /* 글자 색상을 흰색으로 설정 */
+  border: none; /* 테두리 제거 */
+  border-radius: 4px; /* 테두리 둥글게 설정 */
+  cursor: pointer; /* 마우스를 올렸을 때 포인터로 변경 */
+}
+
+.search-button:hover {
+  background-color: #2f4863; /* 호버 시 배경 색상 변경 */
+} 

@@ -1,0 +1,58 @@
+.wheelchair-lift-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5dc; 
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+.wheelchair-lift-info {
+  background-color: #fff5f0; 
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wheelchair-lift-info h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #333;
+  text-align: center; 
+}
+
+.wheelchair-lift-info p {
+  margin: 12px 0; 
+  font-size: 18px; 
+  color: #555;
+  line-height: 1.6; 
+}
+
+.wheelchair-lift-info strong {
+  color: #333;
+}
+
+/* .wheelchair-lift-info p::before {
+  content: "• ";
+  color: #aaa;
+} */
+
+.wheelchair-lift-info-container {
+  animation: fadeIn 0.5s ease-in-out; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

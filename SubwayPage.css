@@ -1,0 +1,97 @@
+.sub-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.subway-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.station-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  border-right: 1px solid #ddd;
+  margin-right: 20px;
+  max-height: 400px; /* 목록의 최대 높이 설정 */
+  overflow-y: auto; /* 스크롤 가능 */
+}
+
+.station-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.station-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.details-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 검색바와 같은 위치로 정렬 */
+}
+
+.subway-info-container {
+  background-color: #fffaf0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.subway-info-container h1 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.subway-info-container .content {
+  display: flex;
+}
+
+.subway-info-container .station-list {
+  width: 200px;
+}
+
+.subway-info-container .details-container {
+  flex-grow: 1;
+}

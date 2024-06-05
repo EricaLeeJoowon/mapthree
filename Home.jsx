@@ -1,53 +1,53 @@
-// src/Home.jsx
-import React, { useState, useEffect } from 'react';
-import { useFetchLocations } from './hooks/useFetchLocations';
-import SearchBar from './components/SearchBar';
-import StationDetails from './components/StationDetails';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import './Home.css';
+
+// const Home = () => {
+//   return (
+//     <div className="home-container">
+//       <h1>교통 정보 조회</h1>
+//       <div className="selection-buttons">
+//         <Link to="/subway">
+//           <button className="subButton">지하철</button>
+//         </Link>
+//         <Link to="/bus">
+//           <button className="busButton">버스</button>
+//         </Link>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+//Home.jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
-  const { isLoading, error, data: locations } = useFetchLocations();
-  const [text, setText] = useState('');
-  const [filteredStations, setFilteredStations] = useState([]);
-  const [selectedStation, setSelectedStation] = useState(null);
-
-  const handleFind = (keyword, stations) => {
-    if (!keyword) return [];
-    const regex = new RegExp(keyword, 'gi');
-    return stations.filter((station) => station.STATION_NM.match(regex));
-  };
-
-  const handleSearch = () => {
-    if (locations) {
-      const matchArr = handleFind(text, locations) || [];
-      setFilteredStations(matchArr);
-      setSelectedStation(null); // Clear previous selection on new search
-      console.log('Search results:', matchArr); // Debug log
-    }
-  };
-
-  useEffect(() => {
-    if (locations && text === '') {
-      setFilteredStations(locations);
-    }
-  }, [locations, text]);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading data</div>;
-
   return (
-    <div>
-      <SearchBar text={text} setText={setText} onSearch={handleSearch} />
-      <ul>
-        {filteredStations.map((station) => (
-          <li key={station.id} onClick={() => setSelectedStation(station)}>
-            {station.STATION_NM}
-          </li>
-        ))}
-      </ul>
-      {selectedStation && <StationDetails station={selectedStation} />}
+    <div className="home-container">
+      <h1>교통 정보 조회</h1>
+        <div className="selection-buttons">
+          <div>
+            <Link to="/map">
+            <button className="mapButton">지도</button>
+            </Link>
+          </div>
+          <div>
+            <Link to="/bus">
+              <button className="busButton">버스</button>
+            </Link>
+          </div> 
+          <div>
+            <Link to="/subway">
+              <button className="subButton">지하철</button>
+            </Link>
+          </div> 
+        </div>
     </div>
   );
 };
 
 export default Home;
-

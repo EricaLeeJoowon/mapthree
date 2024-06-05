@@ -1,0 +1,46 @@
+.station-details {
+  background-color: #fffaf0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.station-details h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.station-details p {
+  margin: 12px 0;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.station-details strong {
+  color: #333;
+}
+
+/* .station-details p::before {
+  content: "• ";
+  color: #aaa;
+} */
+
+.station-details-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
