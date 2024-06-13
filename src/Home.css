@@ -19,8 +19,8 @@
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #7e96b0; /* 초기 배경색 */
-  color: #fff; /* 초기 텍스트 색상 */ 
+  background-color: #7e96b0; 
+  color: #fff; 
 }
 
 .subButton {
@@ -29,17 +29,28 @@
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #7e96b0; /* 초기 배경색 */
-  color: #fff; /* 초기 텍스트 색상 */ 
+  background-color: #7e96b0; 
+  color: #fff; 
 }
+
 .busButton{
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #7e96b0; /* 초기 배경색 */
-  color: #fff; /* 초기 텍스트 색상 */ 
+  background-color: #7e96b0; 
+  color: #fff; 
+}
+
+.chatButton{
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #7e96b0; 
+  color: #fff; 
 }
 
 .mapButton:hover {
@@ -49,6 +60,11 @@
 .subButton:hover {
   background-color: #2f4863;
 }
+
 .busButton:hover {
+  background-color: #2f4863;
+}
+
+.chatButton:hover {
   background-color: #2f4863;
 }
