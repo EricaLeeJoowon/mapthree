@@ -46,6 +46,39 @@ const SubwayPage = () => {
     }
   }, [selectedStation]);
 
+  // Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수
+  const startSpeechRecognition = () => {
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'ko-KR'; // 한국어 설정
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = () => {
+        console.log('음성 인식 시작');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('인식된 텍스트:', transcript);
+        setText(transcript);
+        handleSearch();
+      };
+
+      recognition.onerror = (event) => {
+        console.error('음성 인식 오류:', event.error);
+      };
+
+      recognition.onend = () => {
+        console.log('음성 인식 종료');
+      };
+
+      recognition.start();
+    } else {
+      console.error('Web Speech API가 이 브라우저에서 지원되지 않습니다.');
+    }
+  };
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
@@ -73,6 +106,7 @@ const SubwayPage = () => {
             </div>
           )}
         </div>
+        <button onClick={startSpeechRecognition}>음성 명령 시작</button>
       </div>
     </div>
   );
