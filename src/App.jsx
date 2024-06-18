@@ -6,6 +6,7 @@ import BusPage from './pages/BusPage.jsx';
 import SubwayPage from './pages/SubwayPage.jsx';
 import ChatbotPage from './pages/ChatbotPage.jsx';
 import SentimentPage from './pages/SentimentPage.jsx';
+import ClassifyPage from './pages/ClassifyPage.jsx';
 import './App.css';
 
 const App = () => {
@@ -30,8 +31,12 @@ const App = () => {
               <Link to="/chatbot">Chatbot Page</Link>
             </li>
             <li>
+              <Link to="/classify">Classify Page</Link> 
+            </li>
+            <li>
               <Link to="/sentiment">Sentiment Analysis</Link>
             </li>
+            
           </ul>
         </nav>
         <Routes>
@@ -40,7 +45,8 @@ const App = () => {
           <Route path="/subway" element={<SubwayPage />} />
           <Route path="/bus" element={<BusPage />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
-          <Route path="/sentiment" element={<SentimentPage />} />
+          <Route path="/classify" element={<ClassifyPage />} />
+          <Route path="/sentiment" element={<SentimentPage />} />         
         </Routes>
       </div>
     </Router>
