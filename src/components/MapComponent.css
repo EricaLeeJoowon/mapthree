@@ -1,11 +1,9 @@
-/* MapComponent.css */
-
 .map-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #cbe259; /* 베이지 색상 */
-  border: 5px solid #bae03c; /* 연한 베이지 색상 */
+  background-color: #cbe259; 
+  border: 5px solid #bae03c; 
   border-radius: 5px;
   padding: 20px;
 }
@@ -20,11 +18,11 @@
 .current_address {
   font-size: 16px;
   font-weight: bold;
-  color: blue; /* 어두운 베이지 색상 */
+  color: blue; 
   margin: 10;
   padding: 10px 20px;
-  background-color: #fff8dc; /* 밝은 베이지 색상 */
-  border: 5px solid #d3d3c1; /* 연한 베이지 색상 */
+  background-color: #fff8dc; 
+  border: 5px solid #d3d3c1; 
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
