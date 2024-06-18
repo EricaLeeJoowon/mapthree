@@ -40,7 +40,7 @@ const SentimentPage = () => {
           onChange={(e) => setInputText(e.target.value)}
           placeholder="후기를 입력하세요"
         />
-        <button type="작성">Analyze</button>
+        <button type="submit">작성</button>
       </form>
       {positiveScore !== null && negativeScore !== null && (
         <div className="response-container">
