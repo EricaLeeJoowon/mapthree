@@ -3,7 +3,7 @@ import axios from 'axios';
 import './SentimentPage.css';
 
 const API_URL = "https://api-inference.huggingface.co/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english";
-const API_TOKEN = "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";  // 여기에 실제 토큰을 입력하세요.
+const API_TOKEN = "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";  
 
 const SentimentPage = () => {
   const [inputText, setInputText] = useState('');
@@ -32,15 +32,15 @@ const SentimentPage = () => {
 
   return (
     <div className="sentiment-analysis-container">
-      <h1>Text Sentiment Analysis</h1>
+      <h1>만족도 조사</h1>
       <form onSubmit={handleSubmit} className="input-container">
         <input
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Enter text"
+          placeholder="후기를 입력하세요"
         />
-        <button type="submit">Analyze</button>
+        <button type="작성">Analyze</button>
       </form>
       {positiveScore !== null && negativeScore !== null && (
         <div className="response-container">
