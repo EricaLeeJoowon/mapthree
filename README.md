@@ -183,20 +183,20 @@ const SubwayPage = () => {
 
 # 3-5. ClassifyPage
 
-장애인복지카드를 인식하는 페이지
+장애인복지카드를 인식하는 페이지입니다. 미리 학습시킨 모델을 웹캠과 결합하여 카드를 비추면 구분할 수 있도록 했습니다. 예측 버튼을 누르면 복지카드가 맞는지 아닌지 알려줍니다.
 
 ### 모델 학습
 
-• 구글 코랩에서 모델 학습
+• 구글 코랩에서 모델을 학습시켰습니다.
 
-• tensorflow.js 형식으로 변환해 model.json으로 저장 후 리액트에서 사용 가능하게 함
+• tensorflow.js 형식으로 변환해 model.json으로 저장한 후 리액트에서 사용 가능하게 했습니다. 
 
 • 학습과정 :
 <https://colab.research.google.com/drive/1fZ9v6mnsyb_d-DjYVdWOXAemHseS4vkz?usp=sharing>
 
 ### 모델 시각화
 
-• 웹캠에 비추면 장애인복지카드를 구분할 수 있음
+• 웹캠에 비추면 장애인복지카드를 구분할 수 있습니다.
 
 • 핵심코드1
 
