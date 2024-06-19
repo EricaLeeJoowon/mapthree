@@ -370,6 +370,7 @@ const video = webcamRef.current;
   }
 };
 ```
+![ClassifyPage](images/card.png)
 
 
 ### 3-6. SentimentPage
