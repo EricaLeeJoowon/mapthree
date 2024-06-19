@@ -274,8 +274,7 @@ export default BusPage;
 
 ### 3-4. ChatbotPage
  • 챗봇에게 질문을 하면 챗봇은 서비스에 내장된 정보를 기반으로 대답합니다. 
- • openai에서 챗봇 api를 받아와 챗봇을 구현했습니다. 
-   <https://openai.com> 
+ • openai(https://openai.com)에서 챗봇 api를 받아와 챗봇을 구현했습니다. 
  • flask를 통해 임시 서버를 구축했습니다. 
 
  • 핵심코드
@@ -404,8 +403,8 @@ const video = webcamRef.current;
 
 ### 3-6. SentimentPage
    • 서비스가 어땠는지 적어서 입력하면 긍정적인 표현인지 부정적인 표현인지 감지해 사용자의 만족도를 알 수 있습니다. 
-   • 허깅페이스에서 텍스트 분석을 사용하여 감정 분석을 하는 api를 가져와 사용했습니다. 
-   <https://huggingface.co/stabilityai/stable-diffusion-3-medium>
+   • 허깅페이스(https://huggingface.co/stabilityai/stable-diffusion-3-medium)에서 텍스트 분석을 사용하여 감정 분석을 하는 api를 가져와 사용했습니다. 
+   
    
    • 핵심코드
    ```jsx
