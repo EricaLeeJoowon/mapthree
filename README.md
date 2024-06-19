@@ -92,6 +92,90 @@ const MapComponent = () => {
 <br/>
 <br/>
 
+### 3-2. Subway Page
+
+
+사용자는 Web Speech API를 사용하여 음성을 텍스트로 변환하는 음성인식 서비스를 이용하여 원하는 역을 검색할 수 있습니다. 'StationDetails' ,'WheelchairLiftInfo', 'subwayData' 메서드를 통해 승강기 위치 및 휠체어 리프트 위치를 제공합니다. 또한, 
+
+```jsx
+import React, { useState, useEffect } from 'react';
+import { useFetchLocations } from '../hooks/useFetchLocations';
+import SearchBar from '../components/SearchBar';
+import StationDetails from '../components/StationDetails';
+import WheelchairLiftInfo from '../components/WheelchairLiftInfo';
+import './SubwayPage.css';
+import subwayData from '../subway_data.json'; // Import subway data JSON file
+import { Link } from 'react-router-dom';
+
+const SubwayPage = () => {
+  const { isLoading, error, data: locations } = useFetchLocations();
+  const [text, setText] = useState('');
+  const [filteredStations, setFilteredStations] = useState([]);
+  const [selectedStation, setSelectedStation] = useState(null);
+  const [wheelchairLiftInfo, setWheelchairLiftInfo] = useState(null);
+
+  const handleFind = (keyword, stations) => {
+    if (!keyword) return [];
+    const regex = new RegExp(keyword, 'gi');
+    return stations.filter((station) => station.STATION_NM.match(regex));
+  };
+
+  const handleSearch = () => {
+    if (locations) {
+      const matchArr = handleFind(text, locations) || [];
+      setFilteredStations(matchArr);
+      setSelectedStation(null);
+      console.log('검색 결과:', matchArr);
+    }
+  };
+
+  useEffect(() => {
+    if (locations && text === '') {
+      setFilteredStations(locations);
+    }
+  }, [locations, text]);
+
+  const findWheelchairLiftInfo = (stationName) => {
+    return subwayData.find((item) => item.station === stationName);
+  };
+
+  useEffect(() => {
+    if (selectedStation) {
+      const liftInfo = findWheelchairLiftInfo(selectedStation.STATION_NM);
+      setWheelchairLiftInfo(liftInfo);
+    }
+  }, [selectedStation]);
+
+  // Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수
+  const startSpeechRecognition = () => {
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'ko-KR'; // 한국어 설정
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = () => {
+        console.log('음성 인식 시작');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('인식된 텍스트:', transcript);
+        setText(transcript);
+        handleSearch();
+      };
+
+      recognition.onerror = (event) => {
+        console.error('음성 인식 오류:', event.error);
+      };
+
+      recognition.onend = () => {
+        console.log('음성 인식 종료');
+      };
+```
+
+<br/>
+<br/>
 
 
 
