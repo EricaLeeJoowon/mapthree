@@ -371,7 +371,7 @@ const video = webcamRef.current;
 
 ### 3-6. SentimentPage
    • 서비스가 어땠는지 적어서 입력하면 긍정적인 표현인지 부정적인 표현인지 감지해 사용자의 만족도를 알 수 있습니다. 
-   • 허깅페이스(https://huggingface.co/stabilityai/stable-diffusion-3-medium)에서 텍스트 분석을 사용하여 감정 분석을 하는 api를 가져와 사용했습니다. 
+   • 허깅페이스(https://huggingface.co/stabilityai/stable-diffusion-3-medium) 에서 텍스트 분석을 사용하여 감정 분석을 하는 api를 가져와 사용했습니다. 
    
    
    • 핵심코드
