@@ -98,7 +98,7 @@ const MapComponent = () => {
 ### 3-2. Subway Page
 
 
-서울 열린데이터 광장(https://data.seoul.go.kr/dataList/OA-13192/F/1/datasetView.do) 의 API를 활용하여 휠체어 리프트 위치를 제공합니다. 'StationDetails' ,'WheelchairLiftInfo', 'subwayData' 메서드를 통해 승강기 위치 및 휠체어 리프트 위치를 제공합니다. 
+공공데이터포털의 API를 활용하여 사용자가 지하철역 이름을 입력하면 해당 역의 정보를 제공합니다. 또 서울 열린데이터 광장(https://data.seoul.go.kr/dataList/OA-13192/F/1/datasetView.do) 의 API를 활용하여 휠체어 리프트 위치를 제공합니다. 'StationDetails' ,'WheelchairLiftInfo', 'subwayData' 메서드를 통해 승강기 위치 및 휠체어 리프트 위치를 제공합니다. 
 
 ```jsx
 import React, { useState, useEffect } from 'react';
