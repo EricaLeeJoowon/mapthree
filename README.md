@@ -289,6 +289,8 @@ export default BusPage;
   );
 };
 ```
+![ChatbotPage1](images/chatbot1.png)
+![ChatbotPage2](images/chatbot2.png)
 
 
 
