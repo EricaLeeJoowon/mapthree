@@ -242,7 +242,7 @@ export default BusPage;
 
 ### 3-4. ChatbotPage
  • 챗봇에게 질문을 하면 챗봇은 서비스에 내장된 정보를 기반으로 대답합니다. 
- • openai(https://openai.com)에서 챗봇 api를 받아와 챗봇을 구현했습니다. 
+ • openai(https://openai.com) 에서 챗봇 api를 받아와 챗봇을 구현했습니다. 
  • flask를 통해 임시 서버를 구축했습니다. 
 
  • 핵심코드
