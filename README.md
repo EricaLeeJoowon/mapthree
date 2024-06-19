@@ -272,6 +272,58 @@ export default BusPage;
 <br/>
 <br/>
 
+### 3-4. ChatbotPage
+ • 챗봇에게 질문을 하면 챗봇은 서비스에 내장된 정보를 기반으로 대답합니다. 
+ • openai에서 챗봇 api를 받아와 챗봇을 구현했습니다. 
+   <https://openai.com> 
+ • flask를 통해 임시 서버를 구축했습니다. 
+
+ • 핵심코드
+ ```jsx
+ const ChatbotPage = () => {
+  const [userMessage, setUserMessage] = useState('');
+  const [chatbotMessage, setChatbotMessage] = useState('');
+
+  const handleSendMessage = async () => {
+    if (userMessage.trim() === '') return;
+
+    try {
+      const response = await axios.post('http://localhost:5000/openai/chatbot', { message: userMessage });
+      setChatbotMessage(response.data.reply);
+      setUserMessage('');
+    } catch (error) {
+      console.error('Error fetching chatbot response', error);
+      if (error.response) {
+        console.error('Server responded with:', error.response.data);
+      } else if (error.request) {
+        console.error('No response received:', error.request);
+      } else {
+        console.error('Error setting up request:', error.message);
+      }
+    }
+  };
+
+  return (
+    <div className="chatbot-container">
+      <h1>챗봇</h1>
+      <div className="input-container">
+        <input 
+          type="text" 
+          id="userMessage" 
+          name="userMessage"
+          placeholder="질문을 입력하세요" 
+          value={userMessage} 
+          onChange={(e) => setUserMessage(e.target.value)} 
+        />
+        <button onClick={handleSendMessage}>전송</button>
+      </div>
+      {chatbotMessage && <div className="response-container"><p>챗봇: {chatbotMessage}</p></div>}
+    </div>
+  );
+};
+```
+
+
 
 
 ### 3-5. ClassifyPage
@@ -350,4 +402,58 @@ const video = webcamRef.current;
 };
 ```
 
-#### 결과화면
+### 3-6. SentimentPage
+   • 서비스가 어땠는지 적어서 입력하면 긍정적인 표현인지 부정적인 표현인지 감지해 사용자의 만족도를 알 수 있습니다. 
+   • 허깅페이스에서 텍스트 분석을 사용하여 감정 분석을 하는 api를 가져와 사용했습니다. 
+   <https://huggingface.co/stabilityai/stable-diffusion-3-medium>
+   
+   • 핵심코드
+   ```jsx
+   const SentimentPage = () => {
+  const [inputText, setInputText] = useState('');
+  const [positiveScore, setPositiveScore] = useState(null);
+  const [negativeScore, setNegativeScore] = useState(null);
+
+  const query = async (payload) => {
+    const headers = { Authorization: `Bearer ${API_TOKEN}` };
+    const response = await axios.post(API_URL, payload, { headers });
+    return response.data;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await query({ inputs: inputText });
+      const scores = result[0];
+      const positive = scores.find(score => score.label === "POSITIVE")?.score;
+      const negative = scores.find(score => score.label === "NEGATIVE")?.score;
+      setPositiveScore((positive * 100).toFixed(2));
+      setNegativeScore((negative * 100).toFixed(2));
+    } catch (error) {
+      console.error('Error making prediction:', error);
+    }
+  };
+
+  return (
+    <div className="sentiment-analysis-container">
+      <h1>만족도 조사</h1>
+      <form onSubmit={handleSubmit} className="input-container">
+        <input
+          type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          placeholder="후기를 입력하세요"
+        />
+        <button type="submit">작성</button>
+      </form>
+      {positiveScore !== null && negativeScore !== null && (
+        <div className="response-container">
+          <h2>Prediction:</h2>
+          <p>Positive score: {positiveScore}%</p>
+          <p>Negative score: {negativeScore}%</p>
+        </div>
+      )}
+    </div>
+  );
+};
+```
