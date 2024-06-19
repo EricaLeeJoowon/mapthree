@@ -91,3 +91,86 @@ const MapComponent = () => {
 
 <br/>
 <br/>
+
+
+
+
+
+
+# 3-5. ClassifyPage
+
+장애인복지카드를 인식하는 페이지
+
+### 모델 학습
+
++구글 코랩에서 모델 학습
+
++tensorflow.js 형식으로 변환해 model.json으로 저장 후 리액트에서 사용 가능하게 함
+
++학습과정 :
+<https://colab.research.google.com/drive/1fZ9v6mnsyb_d-DjYVdWOXAemHseS4vkz?usp=sharing>
+
+### 모델 시각화
+
++웹캠에 비추면 장애인복지카드를 구분할 수 있음
+
++핵심코드1
+
+```jsx
+useEffect(() => {
+    const loadModel = async () => {
+      try {
+        const model = await tf.loadLayersModel('/model/model.json');
+        setModel(model);
+        console.log('모델이 성공적으로 로드되었습니다.');
+      } catch (error) {
+        console.error('모델 로드 중 오류 발생:', error);
+      }
+    };
+
+    loadModel();
+  }, []);
+
+  useEffect(() => {
+    const startWebcam = async () => {
+      if (navigator.mediaDevices.getUserMedia) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+          webcamRef.current.srcObject = stream;
+        } catch (error) {
+          console.error('웹캠 시작 중 오류 발생:', error);
+        }
+      }
+    };
+
+    startWebcam();
+  }, []);
+
+  const handlePredict = async () => {
+    if (!model) {
+      alert('모델이 로드되지 않았습니다.');
+      return;
+    }
+```
+
++핵심코드2
+
+```jsx
+const video = webcamRef.current;
+  const imgTensor = tf.browser.fromPixels(video).toFloat();
+  const resizedImgTensor = tf.image.resizeBilinear(imgTensor, [150, 150]);
+  const normalizedImgTensor = resizedImgTensor.div(tf.scalar(255.0));
+  const batchedImgTensor = normalizedImgTensor.expandDims();
+
+  const predictions = await model.predict(batchedImgTensor).data();
+  const prediction = predictions[0];
+
+  if (prediction > 0.5) {
+    setPredictionMessage('장애인복지카드가 맞습니다.');
+  } else {
+    setPredictionMessage('장애인복지카드가 아닙니다.');
+  }
+};
+```
+
+### 결과화면
