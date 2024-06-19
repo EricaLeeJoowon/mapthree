@@ -370,7 +370,7 @@ const video = webcamRef.current;
   }
 };
 ```
-![ClassifyPage](images/classify.png)
+
 
 ### 3-6. SentimentPage
    • 서비스가 어땠는지 적어서 입력하면 긍정적인 표현인지 부정적인 표현인지 감지해 사용자의 만족도를 알 수 있습니다. 
