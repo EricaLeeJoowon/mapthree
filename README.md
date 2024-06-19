@@ -95,7 +95,7 @@ const MapComponent = () => {
 ### 3-2. Subway Page
 
 
-사용자는 Web Speech API를 사용하여 음성을 텍스트로 변환하는 음성인식 서비스를 이용하여 원하는 역을 검색할 수 있습니다. 'StationDetails' ,'WheelchairLiftInfo', 'subwayData' 메서드를 통해 승강기 위치 및 휠체어 리프트 위치를 제공합니다. 
+'StationDetails' ,'WheelchairLiftInfo', 'subwayData' 메서드를 통해 승강기 위치 및 휠체어 리프트 위치를 제공합니다. 
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -145,6 +145,10 @@ const SubwayPage = () => {
       setWheelchairLiftInfo(liftInfo);
     }
   }, [selectedStation]);
+```
+<br/>
+Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수를 통해 음성인식을 제공합니다.
+```jsx
 
   // Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수
   const startSpeechRecognition = () => {
