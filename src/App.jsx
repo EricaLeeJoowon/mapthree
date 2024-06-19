@@ -36,7 +36,6 @@ const App = () => {
             <li>
               <Link to="/sentiment">Sentiment Analysis</Link>
             </li>
-            
           </ul>
         </nav>
         <Routes>
