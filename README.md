@@ -150,10 +150,9 @@ const SubwayPage = () => {
 <br/>
 Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수를 통해 음성인식을 제공합니다.
 <br/>
-
+<br/>
 ```jsx
 
-  // Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수
   const startSpeechRecognition = () => {
     if ('webkitSpeechRecognition' in window) {
       const recognition = new webkitSpeechRecognition();
