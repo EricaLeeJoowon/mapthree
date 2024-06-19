@@ -194,43 +194,6 @@ Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수를 통
 공공데이터포털의 API를 활용하여 사용자에게 정류장의 위치를 제공하였으며, Subway Page의 음성인식 서비스를 제공하며, 정류장의 위치를 네이버 클라우드 플랫폼의 Map API를 활용하여 제공합니다. 
 
 ```jsx
-import React, { useState } from 'react';
-import './BusPage.css';
-import busStops from '../busStops.json'; // Import bus stops JSON file
-import Modal from '../components/Modal'; // Import the Modal component
-import MapComponent from './MapPage'; // Import the MapComponent
-
-const BusPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredStops, setFilteredStops] = useState([]);
-  const [isSearched, setIsSearched] = useState(false);
-  const [selectedStop, setSelectedStop] = useState(null);
-
-  const handleSearch = () => {
-    setIsSearched(true);
-    if (searchTerm.trim() === '') {
-      setFilteredStops([]);
-    } else {
-      const filtered = busStops.filter(stop =>
-        stop.stop_nm && stop.stop_nm.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredStops(filtered);
-    }
-  };
-
-  const handleClick = (stop) => {
-    setSelectedStop(stop);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedStop(null);
-  };
-```
-
-<br/>
-
-
-```jsx
 return (
     <div className="bus-page">
       <h1>버스 정류장 정보</h1>
