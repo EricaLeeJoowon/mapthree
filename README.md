@@ -187,18 +187,18 @@ const SubwayPage = () => {
 
 ### 모델 학습
 
-+구글 코랩에서 모델 학습
+• 구글 코랩에서 모델 학습
 
-+tensorflow.js 형식으로 변환해 model.json으로 저장 후 리액트에서 사용 가능하게 함
+• tensorflow.js 형식으로 변환해 model.json으로 저장 후 리액트에서 사용 가능하게 함
 
-+학습과정 :
+• 학습과정 :
 <https://colab.research.google.com/drive/1fZ9v6mnsyb_d-DjYVdWOXAemHseS4vkz?usp=sharing>
 
 ### 모델 시각화
 
-+웹캠에 비추면 장애인복지카드를 구분할 수 있음
+• 웹캠에 비추면 장애인복지카드를 구분할 수 있음
 
-+핵심코드1
+• 핵심코드1
 
 ```jsx
 useEffect(() => {
@@ -237,7 +237,7 @@ useEffect(() => {
     }
 ```
 
-+핵심코드2
+• 핵심코드2
 
 ```jsx
 const video = webcamRef.current;
