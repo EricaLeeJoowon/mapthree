@@ -24,9 +24,10 @@
 
 ![JAVASCRIPT](https://img.shields.io/badge/JavaScript-f6e158?style=for-the-badge&logo=JavaScript&logoColor=ffffff)
 ![REACT](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=ffffff)
+![Vite](images/vite.svg)
 ![Git](https://img.shields.io/badge/Git-f05032?style=for-the-badge&logo=git&logoColor=ffffff)
 ![Flask](images/flask.svg)
-![Python]
+![Python](images/python.svg)
 
 <br/>
 <br/>
