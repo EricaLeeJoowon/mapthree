@@ -191,7 +191,7 @@ Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수를 통
 ### 3-3. Bus Page
 
 
-공공데이터포털의 API를 활용하여 사용자에게 정류장의 위치를 제공하였으며, Subway Page의 음성인식 서비스를 제공하며, 정류장의 위치를 네이버 클라우드 플랫폼의 Map API를 활용하여 제공합니다. 
+공공데이터포털(https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15000303) 의 API를 활용하여 사용자에게 정류장의 위치를 제공하였으며, Subway Page의 음성인식 서비스를 제공하며, 정류장의 위치를 네이버 클라우드 플랫폼의 Map API를 활용하여 제공합니다. 
 
 ```jsx
 return (
