@@ -234,6 +234,8 @@ return (
 
 export default BusPage;
 ```
+![BusPage1](images/bus1.png)
+![BusPage2](images/bus2.png)
 
 <br/>
 <br/>
