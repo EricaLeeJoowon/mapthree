@@ -11,7 +11,7 @@
 
 <br/>
 
-## 1-2. Project Duration & Participants
+### 1-2. Project Duration & Participants
 
 - 2024-05-20 ~ 2023-06-20
 - 팀 프로젝트 (3인)
