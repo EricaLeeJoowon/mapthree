@@ -240,7 +240,7 @@ export default BusPage;
 <br/>
 <br/>
 
-### 3-4. ChatbotPage
+### 3-4. Chatbot Page
  • 챗봇에게 질문을 하면 챗봇은 서비스에 내장된 정보를 기반으로 대답합니다. 
  • openai(https://openai.com) 에서 챗봇 api를 받아와 챗봇을 구현했습니다. 
  • flask를 통해 임시 서버를 구축했습니다. 
@@ -295,7 +295,7 @@ export default BusPage;
 
 
 
-### 3-5. ClassifyPage
+### 3-5. Classify Page
 
 장애인복지카드를 인식하는 페이지입니다. 미리 학습시킨 모델을 웹캠과 결합하여 카드를 비추면 구분할 수 있도록 했습니다. 예측 버튼을 누르면 복지카드가 맞는지 아닌지 알려줍니다.
 
@@ -373,7 +373,7 @@ const video = webcamRef.current;
 ![ClassifyPage](images/card.png)
 
 
-### 3-6. SentimentPage
+### 3-6. Sentiment Analysis
    • 서비스가 어땠는지 적어서 입력하면 긍정적인 표현인지 부정적인 표현인지 감지해 사용자의 만족도를 알 수 있습니다. 
    • 허깅페이스(https://huggingface.co/stabilityai/stable-diffusion-3-medium) 에서 텍스트 분석을 사용하여 감정 분석을 하는 api를 가져와 사용했습니다. 
    
