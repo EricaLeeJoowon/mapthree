@@ -184,7 +184,7 @@ Web Speech API를 사용하여 음성을 텍스트로 변환하는 함수를 통
         console.log('음성 인식 종료');
       };
 ```
-
+![SubwayPage](images/subway.png)
 <br/>
 <br/>
 
