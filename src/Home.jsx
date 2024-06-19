@@ -1,4 +1,3 @@
-//Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -14,15 +13,30 @@ const Home = () => {
             </Link>
           </div>
           <div>
+            <Link to="/subway">
+              <button className="subButton">지하철</button>
+            </Link>
+          </div> 
+          <div>
             <Link to="/bus">
               <button className="busButton">버스</button>
             </Link>
           </div> 
           <div>
-            <Link to="/subway">
-              <button className="subButton">지하철</button>
+            <Link to="/chatbot">
+              <button className="chatButton">챗봇</button>
             </Link>
-          </div> 
+          </div>
+          <div>
+            <Link to="/classify">
+              <button className="classifyButton">실시간 이미지 분류기</button>
+            </Link>
+          </div>
+          <div>
+            <Link to="/sentiment">
+              <button className="sentimentButton">만족도 조사</button>
+            </Link>
+          </div>   
         </div>
     </div>
   );
