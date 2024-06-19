@@ -91,7 +91,7 @@ const MapComponent = () => {
             },
           })
 ```
-
+![MapPage](images/map.png)
 <br/>
 <br/>
 
